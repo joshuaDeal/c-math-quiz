@@ -22,7 +22,7 @@ void printHelp(void) {
 int main(int argc, char *argv[]) {
 	int questions = 0;
 	int correctAnswers = 0;
-	int answer;
+	int answer = 0;
 	bool multiplication = false;
 	bool division = false;
 	bool addition = false;
