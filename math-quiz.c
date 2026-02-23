@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 				i++;
 				questions = atoi(argv[i]);
 			} else {
-				printf("Error: Please pass a integer with -q.\n");
+				printf("Error: Please pass an integer with -q.\n");
 				return 1;
 			}
 		// Get allowed operators from command line arguments.
