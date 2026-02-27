@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 				i++;
 				questions = atoi(argv[i]);
 			} else {
-				printf("Error: Please pass an integer with -q.\n");
+				fprintf(stderr, "Error: Please pass an integer with -q.\n");
 				return 1;
 			}
 		// Get allowed operators from command line arguments.
@@ -56,17 +56,17 @@ int main(int argc, char *argv[]) {
 		} else if (strcmp(argv[i],  "-s") == 0) {
 			subtraction = true;
 		} else {
-			printf("Error: Invalid argument passed: %s.\nTry running with '-h' for help.\n", argv[i]);
+			fprintf(stderr, "Error: Invalid argument passed: %s.\nTry running with '-h' for help.\n", argv[i]);
 			return 1;
 		}
 	} 
 
 	// Make sure we have at least one operator and a number of questions.
 	if (!multiplication && !division && !addition && !subtraction) {
-		printf("Error: No operators specified.\n");
+		fprintf(stderr, "Error: No operators specified.\n");
 		return 1;
 	} else if (questions <= 0) {
-		printf("Error: No number of questions specified.\n");
+		fprintf(stderr, "Error: No number of questions specified.\n");
 		return 1;
 	}
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
 
 			// Check for overflow
 			if (strchr(inputBuffer, '\n') == NULL) {
-				printf("Warning: Input too long.\n");
+				fprintf(stderr, "Warning: Input too long.\n");
 
 				// Clear stdin input buffer by discarding excess input.
 				int c;
